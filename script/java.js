@@ -2,11 +2,12 @@
 
 let interviewList = [];
 let rejectList = [];
-let currentStatus = 'all'
+let currentStatus = 'all-btn'
 
 let total = document.getElementById('totalCount');
 let interview = document.getElementById('interviewCount');
 let reject = document.getElementById('rejectedCount');
+
 
 // console.log(total)
 
@@ -47,21 +48,37 @@ function toggleStyle(id) {
 
     selected.classList.remove('bg-white', 'text-red-500');
     selected.classList.add('bg-blue-500', 'text-white');
+    document.getElementById('notShowSection').classList.add('hidden');
+
 
     if (id == 'interview-btn') {
         allCardSection.classList.add('hidden');
         fillSection.classList.remove('hidden')
         renderInterview()
-        
+        document.getElementById("total").innerText = interviewList.length;
+
+        if (interviewList.length <= 0) {
+            document.getElementById('notShowSection').classList.remove('hidden');
+
+        }
+
     }
     else if (id == 'all-btn') {
         allCardSection.classList.remove('hidden');
         fillSection.classList.add('hidden');
+        console.log(allCardSection.children.length);
+        document.getElementById("total").innerText = allCardSection.children.length;
+
     }
     else if (id == 'rejected-btn') {
         allCardSection.classList.add('hidden');
         fillSection.classList.remove('hidden')
         renderRejected()
+        document.getElementById("total").innerText = rejectList.length;
+        if (rejectList.length <= 0) {
+            document.getElementById('notShowSection').classList.remove('hidden');
+
+        }
     }
 
 }
@@ -70,7 +87,7 @@ const deleteButtons = document.querySelectorAll('.delete-btn');
 const totalDisplay = document.getElementById('totalCount');
 
 deleteButtons.forEach(button => {
-    button.addEventListener('click', function() {
+    button.addEventListener('click', function () {
         const card = this.closest('.cards');
         card.remove();
 
@@ -78,8 +95,13 @@ deleteButtons.forEach(button => {
         if (currentTotal > 0) {
             totalDisplay.innerText = currentTotal - 1;
         }
+        if (allCardSection.children.length <= 0) {
+            document.getElementById('notShowSection').classList.remove('hidden');
+
+        }
     })
 })
+
 
 
 
@@ -117,7 +139,7 @@ mainContainer.addEventListener('click', function (event) {
         rejectList = rejectList.filter(item => item.deviceName != cardInfo.deviceName);
         calculateCount();
 
-        if(currentStatus= 'rejected-btn'){
+        if (currentStatus = 'rejected-btn') {
             renderRejected()
         }
         // renderInterview();
@@ -139,7 +161,7 @@ mainContainer.addEventListener('click', function (event) {
             deviceName,
             positionName,
             salaryName,
-            statusName:'REJECTED',
+            statusName: 'REJECTED',
             notesName
 
         }
@@ -162,9 +184,7 @@ mainContainer.addEventListener('click', function (event) {
 
     }
 
-
 })
-
 
 
 function renderInterview() {
@@ -246,3 +266,4 @@ function renderRejected() {
     }
 
 }
+toggleStyle(currentStatus);
