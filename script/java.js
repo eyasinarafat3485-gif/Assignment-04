@@ -212,7 +212,7 @@ function renderRejected() {
     for (let reject of rejectList) {
         console.log(reject)
         let div = document.createElement('div');
-        div.className = 'card flex justify-between p-8 bg-white';
+        div.className = 'cards flex justify-between p-8 bg-white';
         div.innerHTML = `
          <div class="space-y-6 ">
                     <!-- part 1 -->
@@ -246,4 +246,3 @@ function renderRejected() {
     }
 
 }
-
