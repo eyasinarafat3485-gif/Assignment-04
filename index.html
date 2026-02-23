@@ -13,26 +13,32 @@
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+        <style>
+            .icon{
+                font-size: 150px;
+            }
+        </style>
+
 </head>
 
 <body class="bg-gray-200 space-y-10 ">
 
     <header class=" bg-base-500 w-[80%] mx-auto">
         <h1 class="font-bold text-4xl py-7">Job Application Tracker</h1>
-        <div class="grid grid-cols-3 gap-4 ">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 ">
             <div class="bg-white p-4 rounded-[7px]">
-                <p class="font-semibold text-[20px] ">Total</p>
-                <p id="totalCount" class="font-semibold text-[20px] text-black-500">0</p>
+                <p class="font-semibold text-[24px] ">Total</p>
+                <p id="totalCount" class="font-semibold text-[24px] text-black-500">0</p>
             </div>
 
             <div class=" bg-white p-4 rounded-[7px]">
-                <p class="font-semibold text-[20px]">Interview</p>
-                <p id="interviewCount" class="font-semibold text-[21px] text-green-500">0</p>
+                <p class="font-semibold text-[24px]">Interview</p>
+                <p id="interviewCount" class="font-semibold text-[24px] text-green-500">0</p>
             </div>
 
             <div class="bg-white p-4 rounded-[7px]">
-                <p class="font-semibold text-[20px]">Rejected</p>
-                <p id="rejectedCount" class="font-semibold text-[20px] text-red-500">0</p>
+                <p class="font-semibold text-[24px]">Rejected</p>
+                <p id="rejectedCount" class="font-semibold text-[24px] text-red-500">0</p>
             </div>
         </div>
     </header>
@@ -52,12 +58,18 @@
                 <button onclick="toggleStyle('rejected-btn')" class="bg-white py-2 px-5 rounded-xl"
                     id="rejected-btn">Rejected</button>
             </div>
+
+            <section id="fill-section" class="hidden space-y-6  p-8 ">
+
+            </section>
+
+
         </section>
 
 
-        <section id="all-cards" class=" bg-white space-y-6">
+        <section id="all-cards" class=" space-y-6">
             <!-- card 1 -->
-            <div class="card flex justify-between p-8 ">
+            <div class="cards flex justify-between bg-white  p-8 ">
                 <!-- main part 1 -->
                 <div class="space-y-6">
                     <!-- part 1 -->
@@ -67,10 +79,10 @@
                     </div>
                     <!-- part 2 -->
                     <div>
-                        <p class=" text-gray-500">Remote • Full-time • $130,000 - $175,000</p>
+                        <p class="salary text-gray-500">Remote • Full-time • $130,000 - $175,000</p>
                     </div>
                     <!-- part 3 -->
-                    <p class="status bg-gray-300 w-[120px] py-2 px-2 rounded-xl"> NOT APPLIED</p>
+                    <p class="status bg-gray-300 w-[120px] py-2 px-2 rounded-xl text-center"> NOT APPLIED</p>
                     <p class="notes">Build cross-platform mobile applications using React Native. Work on products used
                         by millions of users worldwide.</p>
 
@@ -84,25 +96,25 @@
 
                 <!-- main part 2 -->
                 <div>
-                    <button class="border rounded-full bg-white"><i class="fa-solid fa-trash-can"></i></button>
+                    <button class="delete-btn border bg-gray-300"><i class="fa-solid fa-trash-can"></i></button>
                 </div>
             </div>
 
             <!-- card 2 -->
-            <div class="card flex justify-between p-8 ">
+            <div class="cards flex justify-between bg-white p-8 ">
                 <!-- main part 1 -->
                 <div class="space-y-6">
                     <!-- part 1 -->
                     <div>
-                        <h2 class="mobile-two font-semibold text-2xl ">WebFlow Agency</h2>
+                        <h2 class="mobile-one font-semibold text-2xl ">WebFlow Agency</h2>
                         <p class="position-Name text-gray-500">Web Designer & Developer</p>
                     </div>
                     <!-- part 2 -->
                     <div>
-                        <p class=" text-gray-500">Los Angeles, CA • Part-time • $80,000 - $120,000</p>
+                        <p class="salary text-gray-500">Los Angeles, CA • Part-time • $80,000 - $120,000</p>
                     </div>
                     <!-- part 3 -->
-                    <p class="status bg-gray-300 w-[120px] py-2 px-2 rounded-xl"> NOT APPLIED</p>
+                    <p class="status bg-gray-300 w-[120px] py-2 px-2 rounded-xl text-center"> NOT APPLIED</p>
                     <p class="notes">Create stunning web experiences for high-profile clients. Must have portfolio and
                         experience with modern web design trends..</p>
 
@@ -116,25 +128,25 @@
 
                 <!-- main part 2 -->
                 <div>
-                    <button class="border rounded-full bg-white"><i class="fa-solid fa-trash-can"></i></button>
+                    <button class="delete-btn border bg-gray-300"><i class="fa-solid fa-trash-can"></i></button>
                 </div>
             </div>
 
             <!-- card 3 -->
-            <div class="card flex justify-between p-8 ">
+            <div class="cards flex justify-between  bg-white p-8 ">
                 <!-- main part 1 -->
                 <div class="space-y-6">
                     <!-- part 1 -->
                     <div>
-                        <h2 class="mobile-three font-semibold text-2xl ">DataViz Solutions</h2>
+                        <h2 class="mobile-one font-semibold text-2xl ">DataViz Solutions</h2>
                         <p class="position-Name text-gray-500">Data Visualization Specialist</p>
                     </div>
                     <!-- part 2 -->
                     <div>
-                        <p class=" text-gray-500">Boston, MA • Full-time • $125,000 - $165,000</p>
+                        <p class="salary text-gray-500">Boston, MA • Full-time • $125,000 - $165,000</p>
                     </div>
                     <!-- part 3 -->
-                    <p class="status bg-gray-300 w-[120px] py-2 px-2 rounded-xl"> NOT APPLIED</p>
+                    <p class="status bg-gray-300 w-[120px] py-2 px-2 rounded-xl text-center"> NOT APPLIED</p>
                     <p class="notes">Transform complex data into compelling visualizations. Required skills: D3.js,
                         React, and strong analytical thinking.</p>
 
@@ -148,25 +160,25 @@
 
                 <!-- main part 2 -->
                 <div>
-                    <button class="border rounded-full bg-white"><i class="fa-solid fa-trash-can"></i></button>
+                    <button class="delete-btn border bg-gray-300"><i class="fa-solid fa-trash-can"></i></button>
                 </div>
             </div>
 
             <!-- card 4 -->
-            <div class="card flex justify-between p-8 ">
+            <div class="cards flex justify-between  bg-white p-8 ">
                 <!-- main part 1 -->
                 <div class="space-y-6">
                     <!-- part 1 -->
                     <div>
-                        <h2 class="mobile-four font-semibold text-2xl ">CloudFirst Inc</h2>
+                        <h2 class="mobile-one font-semibold text-2xl ">CloudFirst Inc</h2>
                         <p class="position-Name text-gray-500">Backend Developer</p>
                     </div>
                     <!-- part 2 -->
                     <div>
-                        <p class=" text-gray-500">Seattle, WA • Full-time • $140,000 - $190,000/p>
+                        <p class="salary text-gray-500">Seattle, WA • Full-time • $140,000 - $190,000/p>
                     </div>
                     <!-- part 3 -->
-                    <p class="status bg-gray-300 w-[120px] py-2 px-2 rounded-xl"> NOT APPLIED</p>
+                    <p class="status bg-gray-300 w-[120px] py-2 px-2 rounded-xl text-center"> NOT APPLIED</p>
                     <p class="notes">Design and maintain scalable backend systems using Python and AWS. Work with modern
                         DevOps practices and cloud infrastructure.</p>
 
@@ -180,25 +192,25 @@
 
                 <!-- main part 2 -->
                 <div>
-                    <button class="border rounded-full bg-white"><i class="fa-solid fa-trash-can"></i></button>
+                    <button class="delete-btn border bg-gray-300"><i class="fa-solid fa-trash-can"></i></button>
                 </div>
             </div>
 
             <!-- card 5 -->
-            <div class="card flex justify-between p-8 ">
+            <div class="cards flex justify-between  bg-white p-8 ">
                 <!-- main part 1 -->
                 <div class="space-y-6">
                     <!-- part 1 -->
                     <div>
-                        <h2 class="mobile-five font-semibold text-2xl ">Innovation Labs</h2>
+                        <h2 class="mobile-one font-semibold text-2xl ">Innovation Labs</h2>
                         <p class="position-Name text-gray-500">UI/UX Engineer</p>
                     </div>
                     <!-- part 2 -->
                     <div>
-                        <p class=" text-gray-500">Austin, TX • Full-time • $110,000 - $150,000</p>
+                        <p class="salary text-gray-500">Austin, TX • Full-time • $110,000 - $150,000</p>
                     </div>
                     <!-- part 3 -->
-                    <p class="status bg-gray-300 w-[120px] py-2 px-2 rounded-xl"> NOT APPLIED</p>
+                    <p class="status bg-gray-300 w-[120px] py-2 px-2 rounded-xl text-center"> NOT APPLIED</p>
                     <p class="notes">Create beautiful and functional user interfaces for our suite of products. Strong
                         design skills and frontend development expertise required.</p>
 
@@ -212,25 +224,25 @@
 
                 <!-- main part 2 -->
                 <div>
-                    <button class="border rounded-full bg-white"><i class="fa-solid fa-trash-can"></i></button>
+                    <button class="delete-btn border bg-gray-300"><i class="fa-solid fa-trash-can"></i></button>
                 </div>
             </div>
 
             <!-- card 6 -->
-            <div class="card flex justify-between p-8 ">
+            <div class="cards flex justify-between  bg-white p-8 ">
                 <!-- main part 1 -->
                 <div class="space-y-6">
                     <!-- part 1 -->
                     <div>
-                        <h2 class="mobile-six font-semibold text-2xl ">MegaCorp Solutions</h2>
+                        <h2 class="mobile-one font-semibold text-2xl ">MegaCorp Solutions</h2>
                         <p class="position-Name text-gray-500">JavaScript Developer</p>
                     </div>
                     <!-- part 2 -->
                     <div>
-                        <p class=" text-gray-500">New York, NY • Full-time • $130,000 - $170,00</p>
+                        <p class="salary text-gray-500">New York, NY • Full-time • $130,000 - $170,00</p>
                     </div>
                     <!-- part 3 -->
-                    <p class="status bg-gray-300 w-[120px] py-2 px-2 rounded-xl"> NOT APPLIED</p>
+                    <p class="status bg-gray-300 w-[120px] py-2 px-2 rounded-xl text-center"> NOT APPLIED</p>
                     <p class="notes">Build enterprise applications with JavaScript and modern frameworks. We offer
                         competitive compensation, health insurance, and professional development opportunities.</p>
 
@@ -244,25 +256,25 @@
 
                 <!-- main part 2 -->
                 <div>
-                    <button class="border rounded-full bg-white"><i class="fa-solid fa-trash-can"></i></button>
+                    <button class="delete-btn border bg-gray-300"><i class="fa-solid fa-trash-can"></i></button>
                 </div>
             </div>
 
             <!-- card 7 -->
-            <div class="card flex justify-between p-8 ">
+            <div class="cards flex justify-between  bg-white p-8 ">
                 <!-- main part 1 -->
                 <div class="space-y-6">
                     <!-- part 1 -->
                     <div>
-                        <h2 class="mobile-seven font-semibold text-2xl ">StartupXYZ</h2>
+                        <h2 class="mobile-one font-semibold text-2xl ">StartupXYZ</h2>
                         <p class="position-Name text-gray-500">Full Stack Engineer</p>
                     </div>
                     <!-- part 2 -->
                     <div>
-                        <p class=" text-gray-500">Remote • Full-time • $120,000 - $160,000</p>
+                        <p class="salary text-gray-500">Remote • Full-time • $120,000 - $160,000</p>
                     </div>
                     <!-- part 3 -->
-                    <p class="status bg-gray-300 w-[120px] py-2 px-2 rounded-xl"> NOT APPLIED</p>
+                    <p class="status bg-gray-300 w-[120px] py-2 px-2 rounded-xl text-center"> NOT APPLIED</p>
                     <p class="notes">Join our fast-growing startup and work on our core platform. Experience with
                         Node.js and React required. Great benefits and equity package included.</p>
 
@@ -276,25 +288,25 @@
 
                 <!-- main part 2 -->
                 <div>
-                    <button class="border rounded-full bg-white"><i class="fa-solid fa-trash-can"></i></button>
+                    <button class="delete-btn border bg-gray-300"><i class="fa-solid fa-trash-can"></i></button>
                 </div>
             </div>
 
             <!-- card 8 -->
-            <div class="card flex justify-between p-8 ">
+            <div class="cards flex justify-between  bg-white p-8 ">
                 <!-- main part 1 -->
                 <div class="space-y-6">
                     <!-- part 1 -->
                     <div>
-                        <h2 class="mobile-eight font-semibold text-2xl ">TechCorp Industries</h2>
+                        <h2 class="mobile-one font-semibold text-2xl ">TechCorp Industries</h2>
                         <p class="position-Name text-gray-500">Senior Frontend Developer</p>
                     </div>
                     <!-- part 2 -->
                     <div>
-                        <p class=" text-gray-500">San Francisco, CA • Full-time • $130,000 - $175,000</p>
+                        <p class="salary text-gray-500">San Francisco, CA • Full-time • $130,000 - $175,000</p>
                     </div>
                     <!-- part 3 -->
-                    <p class="status bg-gray-300 w-[120px] py-2 px-2 rounded-xl"> NOT APPLIED</p>
+                    <p class="status bg-gray-300 w-[120px] py-2 px-2 rounded-xl text-center"> NOT APPLIED</p>
                     <p class="notes">We are looking for an experienced Frontend Developer to build scalable web
                         applications using React and TypeScript. You will work with a talented team on cutting-edge
                         projects.</p>
@@ -309,13 +321,32 @@
 
                 <!-- main part 2 -->
                 <div>
-                    <button class="border rounded-full bg-white"><i class="fa-solid fa-trash-can"></i></button>
+                    <button class="delete-btn border bg-gray-300"><i class="fa-solid fa-trash-can"></i></button>
                 </div>
             </div>
 
 
         </section>
     </main>
+
+    <!-- Zero section -->
+     <section id="not-show-section" class="card bg-white p-8 w-[80%] mx-auto text-center space-y-5 ">
+        <!-- <div class="h-[150px] "><i class="fa-solid fa-file" ></i></div> -->
+        <span class="icon "><i class="fa-solid fa-file"></i></span>
+       <h2 class="text-2xl font-bold mb-5">No jobs available</h2>
+       <p>Check back soon for new job opportunities</p>
+       <!-- <div id="not-container" class="">
+
+       </div> -->
+
+     </section>
+
+    <!-- Transactions sectiion -->
+    <!-- <section id="history" class="w-11/12 mx-auto py-5 hidden">
+        <h2 class="text-2xl font-bold mb-5">Transactions</h2>
+        <div id="history-container" class="space-y-5">
+
+    </section> -->
 
 
     <script src="script/java.js"></script>
