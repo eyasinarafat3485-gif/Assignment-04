@@ -1,9 +1,9 @@
-1. Ans: (i) getElement is selects a single element by its unique ID.
-(ii) getElementsByClassName is selects all elements with a specific class name. 
+1. Ans: (i) getElementID is selects a single elemet by its inique ID.
+(ii) getElementsByClassName is selects all elements with a specific class name.
 (iii) querySelector is selects only the first element that matches a CSS selector.
 (iv) querySelectorAll is the all element that matches a CSS selector.
 
-2. Ans: Need first document.createElement() for create a new tag in memory. Then element some text or a class name need add so it's not empty this. Finally, use appendChild() or append() need to attach it to an existing parent element like the body
+2. Ans: Need first document.createElement() for create a new tag in memory. Then element some text or a class name need add so it's not empty this. Finally, use appendChild() or append() need to attach it to an existing parent element like the body.
 
 3. Ans: Event Bubbling is a concept in the Document Object Model (DOM) , array like object but not 100%. Event bubbling is the default behavior for most events in JavaScript. When we click on the innermost element, the event listener for that element fires first, the event then triggers handlers on the direct parent, then the grandparent, and continues to the root 
 

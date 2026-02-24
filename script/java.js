@@ -8,7 +8,6 @@ let total = document.getElementById('totalCount');
 let interview = document.getElementById('interviewCount');
 let reject = document.getElementById('rejectedCount');
 
-
 // console.log(total)
 
 const allBtn = document.getElementById('all-btn');
@@ -102,9 +101,6 @@ deleteButtons.forEach(button => {
     })
 })
 
-
-
-
 mainContainer.addEventListener('click', function (event) {
     // console.log(event.target.parentNode.parentNode);
 
@@ -185,7 +181,6 @@ mainContainer.addEventListener('click', function (event) {
     }
 
 })
-
 
 function renderInterview() {
     fillSection.innerHTML = '';
